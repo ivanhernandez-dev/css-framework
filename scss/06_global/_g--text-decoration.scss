@@ -1,0 +1,6 @@
+$property-name: text-decoration;
+$values: $text-decoration-values;
+
+@include variables-value-as-name($property-name, $values);
+@include globals-value-as-name($property-name, $values);
+@include responsive-globals-value-as-name($property-name, $values);

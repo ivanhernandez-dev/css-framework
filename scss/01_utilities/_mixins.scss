@@ -36,6 +36,16 @@
   }
 }
 
+@mixin variables-value-as-name($property-name, $values) {
+  :root {
+    @each $value in $values {
+      $variable-name: $property-name + "-" + $value;
+
+      --#{$variable-name}: #{$value};
+    }
+  }
+}
+
 @mixin variables-map-from-1($property-name, $values) {
   :root {
     @each $key, $value in $values {
@@ -94,6 +104,16 @@
   }
 }
 
+@mixin globals-value-as-name($property-name, $values) {
+  @each $value in $values {
+    $class-name: $global-prefix + $property-name + '-' + $value;
+
+    .#{$class-name} {
+      #{$property-name}: $value;
+    }
+  }
+}
+
 @mixin responsive-globals-from-0($property-name, $values) {
   $media-filter-responsive: map-get($media-filters, "responsive");
   @each $key, $value in map-get($media-filter-responsive, "breakpoints") {
@@ -132,6 +152,21 @@
     @media (min-width: $value) {
       @each $key-b, $value-b in $values {
         $class-name: add-filter-word($key, map-get($media-filter-responsive, "position"), map-get($media-filter-responsive, "separator"), $global-prefix + $property-name + '-' + $key-b);
+
+        .#{$class-name} {
+          #{$property-name}: $value-b;
+        }
+      }
+    }
+  }
+}
+
+@mixin responsive-globals-value-as-name($property-name, $values) {
+  $media-filter-responsive: map-get($media-filters, "responsive");
+  @each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+    @media (min-width: $value) {
+      @each $value-b in $values {
+        $class-name: add-filter-word($key, map-get($media-filter-responsive, "position"), map-get($media-filter-responsive, "separator"), $global-prefix + $property-name + '-' + $value-b);
 
         .#{$class-name} {
           #{$property-name}: $value-b;

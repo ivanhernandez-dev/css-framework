@@ -6853,5 +6853,180 @@ html {
     outline-color: #191101;
   }
 }
+:root {
+  --font-decoration-normal: normal;
+  --font-decoration-bold: bold;
+  --font-decoration-bolder: bolder;
+  --font-decoration-lighter: lighter;
+}
+
+.g--font-decoration-normal {
+  font-decoration: normal;
+}
+
+.g--font-decoration-bold {
+  font-decoration: bold;
+}
+
+.g--font-decoration-bolder {
+  font-decoration: bolder;
+}
+
+.g--font-decoration-lighter {
+  font-decoration: lighter;
+}
+
+@media (min-width: 640px) {
+  .sm\:g--font-decoration-normal {
+    font-decoration: normal;
+  }
+  .sm\:g--font-decoration-bold {
+    font-decoration: bold;
+  }
+  .sm\:g--font-decoration-bolder {
+    font-decoration: bolder;
+  }
+  .sm\:g--font-decoration-lighter {
+    font-decoration: lighter;
+  }
+}
+@media (min-width: 768px) {
+  .md\:g--font-decoration-normal {
+    font-decoration: normal;
+  }
+  .md\:g--font-decoration-bold {
+    font-decoration: bold;
+  }
+  .md\:g--font-decoration-bolder {
+    font-decoration: bolder;
+  }
+  .md\:g--font-decoration-lighter {
+    font-decoration: lighter;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:g--font-decoration-normal {
+    font-decoration: normal;
+  }
+  .lg\:g--font-decoration-bold {
+    font-decoration: bold;
+  }
+  .lg\:g--font-decoration-bolder {
+    font-decoration: bolder;
+  }
+  .lg\:g--font-decoration-lighter {
+    font-decoration: lighter;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:g--font-decoration-normal {
+    font-decoration: normal;
+  }
+  .xl\:g--font-decoration-bold {
+    font-decoration: bold;
+  }
+  .xl\:g--font-decoration-bolder {
+    font-decoration: bolder;
+  }
+  .xl\:g--font-decoration-lighter {
+    font-decoration: lighter;
+  }
+}
+:root {
+  --text-decoration-none: none;
+  --text-decoration-underline: underline;
+  --text-decoration-overline: overline;
+  --text-decoration-line-through: line-through;
+  --text-decoration-blink: blink;
+}
+
+.g--text-decoration-none {
+  text-decoration: none;
+}
+
+.g--text-decoration-underline {
+  text-decoration: underline;
+}
+
+.g--text-decoration-overline {
+  text-decoration: overline;
+}
+
+.g--text-decoration-line-through {
+  text-decoration: line-through;
+}
+
+.g--text-decoration-blink {
+  text-decoration: blink;
+}
+
+@media (min-width: 640px) {
+  .sm\:g--text-decoration-none {
+    text-decoration: none;
+  }
+  .sm\:g--text-decoration-underline {
+    text-decoration: underline;
+  }
+  .sm\:g--text-decoration-overline {
+    text-decoration: overline;
+  }
+  .sm\:g--text-decoration-line-through {
+    text-decoration: line-through;
+  }
+  .sm\:g--text-decoration-blink {
+    text-decoration: blink;
+  }
+}
+@media (min-width: 768px) {
+  .md\:g--text-decoration-none {
+    text-decoration: none;
+  }
+  .md\:g--text-decoration-underline {
+    text-decoration: underline;
+  }
+  .md\:g--text-decoration-overline {
+    text-decoration: overline;
+  }
+  .md\:g--text-decoration-line-through {
+    text-decoration: line-through;
+  }
+  .md\:g--text-decoration-blink {
+    text-decoration: blink;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:g--text-decoration-none {
+    text-decoration: none;
+  }
+  .lg\:g--text-decoration-underline {
+    text-decoration: underline;
+  }
+  .lg\:g--text-decoration-overline {
+    text-decoration: overline;
+  }
+  .lg\:g--text-decoration-line-through {
+    text-decoration: line-through;
+  }
+  .lg\:g--text-decoration-blink {
+    text-decoration: blink;
+  }
+}
+@media (min-width: 1280px) {
+  .xl\:g--text-decoration-none {
+    text-decoration: none;
+  }
+  .xl\:g--text-decoration-underline {
+    text-decoration: underline;
+  }
+  .xl\:g--text-decoration-overline {
+    text-decoration: overline;
+  }
+  .xl\:g--text-decoration-line-through {
+    text-decoration: line-through;
+  }
+  .xl\:g--text-decoration-blink {
+    text-decoration: blink;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
