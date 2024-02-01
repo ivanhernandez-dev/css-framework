@@ -1,0 +1,18 @@
+.l-position {
+    @each $position in map-get($l-position, "positions") {
+        &--#{$position} {
+            position: $position;
+        }
+    }
+
+    @each $direction in map-get($l-position, "directions") {
+        $spaces: map-get($l-position, "spaces");
+        @for $i from 0 to length($spaces) {
+            $space: nth($spaces, $i + 1);
+
+            &__#{$direction}-#{$i} {
+                #{$direction}: $space;
+            }
+        }
+    }
+}
