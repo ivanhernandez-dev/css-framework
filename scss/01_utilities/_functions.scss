@@ -1,0 +1,7 @@
+@function add-filter-word($filter-word, $position, $separator, $actual-name) {
+  @if $position == "after" {
+    @return $actual-name + $separator + $filter-word;
+  } @else if $position == "before" {
+    @return $filter-word + $separator + $actual-name;
+  }
+}

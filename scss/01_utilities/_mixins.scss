@@ -1,0 +1,170 @@
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin variables-from-0($property-name, $values) {
+  :root {
+    @for $i from 0 to length($values) {
+      $value: nth($values, $i + 1);
+      $variable-name: $property-name + "-" + $i;
+
+      --#{$variable-name}: #{$value};
+    }
+  }
+}
+
+@mixin variables-from-1($property-name, $values) {
+  :root {
+    @for $i from 1 through length($values) {
+      $value: nth($values, $i);
+      $variable-name: $property-name + "-" + $i;
+
+      --#{$variable-name}: #{$value};
+    }
+  }
+}
+
+@mixin variables-map($property-name, $values) {
+  :root {
+    @each $key, $value in $values {
+      $variable-name: $property-name + "-" + $key;
+
+      --#{$variable-name}: #{$value};
+    }
+  }
+}
+
+@mixin variables-map-from-1($property-name, $values) {
+  :root {
+    @each $key, $value in $values {
+      @for $i from 1 through length($value) {
+        $intern-value: nth($value, $i);
+        $variable-name: $property-name + "-" + $key + "-" + $i;
+
+        --#{$variable-name}: #{$intern-value};
+      }
+    }
+  }
+}
+
+@mixin globals-from-0($property-name, $values) {
+  @for $i from 0 to length($values) {
+    $value: nth($values, $i + 1);
+    $class-name: $global-prefix + $property-name + '-' + #{if($value == none, none, $i)};
+
+    .#{$class-name} {
+      #{$property-name}: $value;
+    }
+  }
+}
+
+@mixin globals-from-1($property-name, $values) {
+  @for $i from 1 through length($values) {
+    $value: nth($values, $i);
+    $class-name: $global-prefix + $property-name +'-' + $i;
+
+    .#{$class-name} {
+      #{$property-name}: $value;
+    }
+  }
+}
+
+@mixin globals-map($property-name, $values) {
+  @each $key, $value in $values {
+    $class-name: $global-prefix + $property-name +'-' + $key;
+
+    .#{$class-name} {
+      #{$property-name}: $value;
+    }
+  }
+}
+
+@mixin globals-map-from-1($property-name, $values) {
+  @each $key, $value in $values {
+    @for $i from 1 through length($value) {
+      $intern-value: nth($value, $i);
+      $class-name: $global-prefix + $property-name + '-' + $key + '-' + $i;
+
+      .#{$class-name} {
+        #{$property-name}: $intern-value;
+      }
+    }
+  }
+}
+
+@mixin responsive-globals-from-0($property-name, $values) {
+  $media-filter-responsive: map-get($media-filters, "responsive");
+  @each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+    @media (min-width: $value) {
+      @for $i from 0 to length($values) {
+        $value: nth($values, $i + 1);
+        $class-name: add-filter-word($key, map-get($media-filter-responsive, "position"), map-get($media-filter-responsive, "separator"), $global-prefix + $property-name + '-' + #{if($value == none, none, $i)});
+
+        .#{$class-name} {
+          #{$property-name}: $value;
+        }
+      }
+    }
+  }
+}
+
+@mixin responsive-globals-from-1($property-name, $values) {
+  $media-filter-responsive: map-get($media-filters, "responsive");
+  @each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+    @media (min-width: $value) {
+      @for $i from 1 through length($values) {
+        $value: nth($values, $i);
+        $class-name: add-filter-word($key, map-get($media-filter-responsive, "position"), map-get($media-filter-responsive, "separator"), $global-prefix + $property-name + '-' + $i);
+
+        .#{$class-name} {
+          #{$property-name}: $value;
+        }
+      }
+    }
+  }
+}
+
+@mixin responsive-globals-map($property-name, $values) {
+  $media-filter-responsive: map-get($media-filters, "responsive");
+  @each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+    @media (min-width: $value) {
+      @each $key-b, $value-b in $values {
+        $class-name: add-filter-word($key, map-get($media-filter-responsive, "position"), map-get($media-filter-responsive, "separator"), $global-prefix + $property-name + '-' + $key-b);
+
+        .#{$class-name} {
+          #{$property-name}: $value-b;
+        }
+      }
+    }
+  }
+}
+
+@mixin dark-globals-from-0($property-name, $values) {
+  $media-filter-dark: map-get($media-filters, "dark");
+  @media (prefers-color-scheme: dark) {
+    @for $i from 0 to length($values) {
+      $value: nth($values, $i + 1);
+      $class-name: add-filter-word(map-get($media-filter-dark, "word"), map-get($media-filter-dark, "position"), map-get($media-filter-dark, "separator"), $global-prefix + $property-name + '-' + #{if($value == none, none, $i)});
+      .#{$class-name} {
+        #{$property-name}: $value;
+      }
+    }
+  }
+}
+
+@mixin dark-globals-map-from-1($property-name, $values) {
+  $media-filter-dark: map-get($media-filters, "dark");
+  @each $key, $value in $values {
+    @media (prefers-color-scheme: dark) {
+      @for $i from 1 through length($value) {
+        $intern-value: nth($value, $i);
+        $class-name: add-filter-word(map-get($media-filter-dark, "word"), map-get($media-filter-dark, "position"), map-get($media-filter-dark, "separator"), $global-prefix + $property-name + '-' + $key + '-' + $i);
+        .#{$class-name} {
+          #{$property-name}: $intern-value;
+        }
+      }
+    }
+  }
+}

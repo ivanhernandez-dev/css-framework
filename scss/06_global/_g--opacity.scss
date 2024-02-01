@@ -1,0 +1,6 @@
+$property-name: opacity;
+$values: $opacity-values;
+
+@include variables-from-0($property-name, $values);
+@include globals-from-0($property-name, $values);
+@include dark-globals-from-0($property-name, $values)

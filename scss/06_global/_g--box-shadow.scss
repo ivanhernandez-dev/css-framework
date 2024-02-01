@@ -1,0 +1,32 @@
+$property-name: box-shadow;
+$values: $box-shadow-values;
+
+:root {
+  @for $i from 0 to length($values) {
+    $value: nth($values, $i + 1);
+    $variable-name: $property-name + "-" + #{if($i == 0, none, $i)};
+
+    --#{$variable-name}: #{$value};
+  }
+}
+
+@for $i from 0 to length($values) {
+  $value: nth($values, $i + 1);
+  $class-name: $global-prefix + $property-name + '-' + #{if($i == 0, none, $i)};
+
+  .#{$class-name} {
+    @include box-shadow($value);
+  }
+}
+
+$media-filter-dark: map-get($media-filters, "dark");
+@media (prefers-color-scheme: dark) {
+  @for $i from 0 to length($values) {
+    $value: nth($values, $i + 1);
+    $class-name: add-filter-word(map-get($media-filter-dark, "word"), map-get($media-filter-dark, "position"), map-get($media-filter-dark, "separator"), $global-prefix + $property-name + '-' + #{if($i == 0, none, $i)});
+
+    .#{$class-name} {
+      @include box-shadow($value);
+    }
+  }
+}

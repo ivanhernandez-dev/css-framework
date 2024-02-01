@@ -1,0 +1,6 @@
+$property-name: border-radius;
+$values: $border-radius-values;
+
+@include variables-from-0($property-name, $values);
+@include globals-from-0($property-name, $values);
+@include responsive-globals-from-0($property-name, $values);

@@ -1,0 +1,15 @@
+$property-name: color;
+$values: $colors;
+$property-names: (
+  color,
+  background-color,
+  border-color,
+  outline-color,
+);
+
+@include variables-map-from-1($property-name, $values);
+
+@each $property-name in $property-names {
+  @include globals-map-from-1($property-name, $values);
+  @include dark-globals-map-from-1($property-name, $values);
+}

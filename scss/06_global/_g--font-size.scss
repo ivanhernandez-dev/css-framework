@@ -1,0 +1,6 @@
+$property-name: font-size;
+$values: $font-size-values;
+
+@include variables-from-1($property-name, $values);
+@include globals-from-1($property-name, $values);
+@include responsive-globals-from-1($property-name, $values);

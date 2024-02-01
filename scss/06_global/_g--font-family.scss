@@ -1,0 +1,6 @@
+$property-name: font-family;
+$values: $font-families;
+
+@include variables-map($property-name, $values);
+@include globals-map($property-name, $values);
+@include responsive-globals-map($property-name, $values);

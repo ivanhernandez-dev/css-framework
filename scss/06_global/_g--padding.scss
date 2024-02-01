@@ -1,0 +1,10 @@
+$values: $padding-values;
+$property-name: padding;
+$property-names: (padding, padding-left, padding-right, padding-top, padding-bottom);
+
+@include variables-from-0($property-name, $values);
+
+@each $property-name in $property-names {
+  @include globals-from-0($property-name, $values);
+  @include responsive-globals-from-0($property-name, $values);
+}
