@@ -1,10 +1,10 @@
 $values: $margin-values;
-$property-name: margin;
+$main-property-name: margin;
 $property-names: (margin, margin-left, margin-right, margin-top, margin-bottom);
 
-@include variables-from-0($property-name, $values);
+@include variables-from-0($main-property-name, $values);
 
 @each $property-name in $property-names {
-  @include globals-from-0($property-name, $values);
-  @include responsive-globals-from-0($property-name, $values);
+  @include globals-from-0($property-name, $values, $main-property-name);
+  @include responsive-globals-from-0($property-name, $values, $main-property-name);
 }
