@@ -8,7 +8,11 @@
 "02_base/_reset";
 
 @import
-"04_components/_c-button";
+"04_components/_c-button",
+"04_components/_c-alert",
+"04_components/_c-badge",
+"04_components/_c-title",
+"04_components/_c-card";
 
 @import
 "06_global/_g--padding",
@@ -19,5 +23,5 @@
 "06_global/_g--box-shadow",
 "06_global/_g--border-radius",
 "06_global/_g--color",
-"06_global/_g--font-decoration",
+"06_global/g--font-weight",
 "06_global/_g--text-decoration";

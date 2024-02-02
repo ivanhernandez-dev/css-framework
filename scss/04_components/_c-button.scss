@@ -45,6 +45,12 @@
   border-color: var(--c-button-border-color);
   border-radius: var(--c-button-border-radius);
 
+  &--medium {
+    --c-button-padding-horizontal: var(--c-button-padding-horizontal-l);
+    --c-button-padding-vertical: var(--c-button-padding-vertical-l);
+    --c-button-font-size: var(--c-button-font-size-l);
+  }
+
   &--large {
     --c-button-padding-horizontal: var(--c-button-padding-horizontal-l);
     --c-button-padding-vertical: var(--c-button-padding-vertical-l);
@@ -66,6 +72,11 @@
     background-color: var(--c-button-weak-color);
     color: var(--c-button-strong-color);
     border-color: var(--c-button-weak-color);
+  }
+
+  &--primary {
+    --c-button-strong-color: var(--c-button-primary-color);
+    --c-button-weak-color: var(--c-button-white-color);
   }
 
   &--danger {

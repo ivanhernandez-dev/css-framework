@@ -1,0 +1,65 @@
+.c-alert {
+  --c-alert-primary-color-weak: var(--color-primary-2);
+  --c-alert-primary-color-strong: var(--color-primary-7);
+  --c-alert-alternative-color-weak: var(--color-alternative-2);
+  --c-alert-alternative-color-strong: var(--color-alternative-7);
+  --c-alert-danger-color-weak: var(--color-danger-2);
+  --c-alert-danger-color-strong: var(--color-danger-7);
+
+  --c-alert-color-strong: var(--c-alert-primary-color-strong);
+  --c-alert-color-weak: var(--c-alert-primary-color-weak);
+
+  --c-alert-padding-m: var(--padding-6);
+  --c-alert-padding-l: var(--padding-7);
+  --c-alert-padding-s: var(--padding-5);
+
+  --c-alert-padding: var(--c-alert-padding-m);
+
+  --c-alert-font-family: var(--font-family-sans-serif);
+
+  --c-alert-font-size-m: var(--font-size-7);
+  --c-alert-font-size-l: var(--font-size-8);
+  --c-alert-font-size-s: var(--font-size-6);
+
+  --c-alert-font-size: var(--c-alert-font-size-m);
+
+  --c-alert-border-radius: var(--border-radius-4);
+
+  background-color: var(--c-alert-color-weak);
+  color: var(--c-alert-color-strong);
+  padding: var(--c-alert-padding);
+  font-family: var(--c-alert-font-family);
+  font-size: var(--c-alert-font-size);
+  border-radius: var(--c-alert-border-radius);
+  display: block;
+
+  &--primary {
+    --c-alert-color-strong: var(--c-alert-primary-color-strong);
+    --c-alert-color-weak: var(--c-alert-primary-color-weak);
+  }
+  
+  &--alternative {
+    --c-alert-color-strong: var(--c-alert-alternative-color-strong);
+    --c-alert-color-weak: var(--c-alert-alternative-color-weak);
+  }
+
+  &--danger {
+    --c-alert-color-strong: var(--c-alert-danger-color-strong);
+    --c-alert-color-weak: var(--c-alert-danger-color-weak);
+  }
+
+  &--medium {
+    --c-alert-padding: var(--c-alert-padding-m);
+    --c-alert-font-size: var(--c-alert-font-size-m);
+  }
+
+  &--large {
+    --c-alert-padding: var(--c-alert-padding-l);
+    --c-alert-font-size: var(--c-alert-font-size-l);
+  }
+
+  &--small {
+    --c-alert-padding: var(--c-alert-padding-s);
+    --c-alert-font-size: var(--c-alert-font-size-s);
+  }
+}

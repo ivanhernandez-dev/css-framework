@@ -1,4 +1,4 @@
-$property-name: font-decoration;
+$property-name: font-weight;
 $values: $font-decoration-values;
 
 @include variables-value-as-name($property-name, $values);
