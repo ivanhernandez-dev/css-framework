@@ -21,6 +21,7 @@ $opacity-values: (0: 0, 25: .25,50: .5,75: .75,100: 1);
 $padding-values: (0, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 128px, 160px, 192px, 224px, 256px, 320px, 480px, 640px);
 $margin-values: (0, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 128px, 160px, 192px, 224px, 256px, 320px, 480px, 640px);
 $font-size-values: (8px, 9px, 10px, 11px, 12px, 14px, 16px, 18px, 20px, 24px, 30px, 36px, 48px, 64px);
+// TODO: Fix fonts
 $font-families: (
   "sans-serif": Graphik BlinkMacSystemFont 'Segoe UI' Roboto Oxygen-Sans Ubuntu Cantarell 'Helvetica Neue' sans-serif,
   "serif": "Playfair Display" "Source Serif Pro" Merrirweather Georgia serif,
@@ -38,6 +39,7 @@ $border-radius-values: (0, 2px, 4px, 6px, 8px, 16px);
 $colors: (
     "primary": (#E6F3FE, #B8D9F5, #90C3E4, #67AAD0, #4097BF, #2F7A98, #1C5F73, #0A3B47, #011519),
     "alternative": (#FBFEE6, #F5FDAF, #F5FC79, #F7FA3D, #F9F106, #C2B505, #8B7B04, #504402, #191401),
+    "danger": (#FEECE6, #F5C4B8, #E49D90, #D07367, #BF4840, #98322F, #73231C, #47110A, #190501),
     "gray": (#d9d9d9, #c2c2c2, #ababab, #949494, #7d7d7d, #666666, #4f4f4f, #383838),
     "white": (#FFFFFF, #FCFCFC, #FAFAFA, #F7F7F7, #F5F5F5, #F2F2F2, #F0F0F0, #EDEDED, #EBEBEB),
     "red": (#FEECE6, #F5C4B8, #E49D90, #D07367, #BF4840, #98322F, #73231C, #47110A, #190501),
