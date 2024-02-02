@@ -420,9 +420,9 @@ html {
   --c-button-color: var(--c-button-strong-color);
 }
 .c-button--link {
-  background-color: transparent;
+  background-color: var(--c-button-weak-color);
   color: var(--c-button-strong-color);
-  border-color: transparent;
+  border-color: var(--c-button-weak-color);
 }
 .c-button--danger {
   --c-button-strong-color: var(--c-button-danger-color);

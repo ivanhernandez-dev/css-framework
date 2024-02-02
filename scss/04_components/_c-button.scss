@@ -63,9 +63,9 @@
   }
 
   &--link {
-    background-color: transparent;
+    background-color: var(--c-button-weak-color);
     color: var(--c-button-strong-color);
-    border-color: transparent;
+    border-color: var(--c-button-weak-color);
   }
 
   &--danger {
