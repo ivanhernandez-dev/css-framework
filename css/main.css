@@ -4867,9 +4867,9 @@ html {
   }
 }
 :root {
-  --font-family-sans-serif: Graphik BlinkMacSystemFont Segoe UI Roboto Oxygen-Sans Ubuntu Cantarell Helvetica Neue sans-serif;
-  --font-family-serif: Playfair Display Source Serif Pro Merrirweather Georgia serif;
-  --font-family-monospace: Source Code Pro Fira Code Fira Mono Roboto Mono Lucida Console Monaco monospace;
+  --font-family-sans-serif: Graphik, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  --font-family-serif: "Playfair Display", "Source Serif Pro", Merrirweather, Georgia, serif;
+  --font-family-monospace: "Source Code Pro", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
 }
 
 .g--font-family-sans-serif {

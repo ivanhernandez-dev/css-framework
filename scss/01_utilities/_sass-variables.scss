@@ -23,9 +23,9 @@ $margin-values: (0, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48p
 $font-size-values: (8px, 9px, 10px, 11px, 12px, 14px, 16px, 18px, 20px, 24px, 30px, 36px, 48px, 64px);
 // TODO: Fix fonts
 $font-families: (
-  "sans-serif": Graphik BlinkMacSystemFont 'Segoe UI' Roboto Oxygen-Sans Ubuntu Cantarell 'Helvetica Neue' sans-serif,
-  "serif": "Playfair Display" "Source Serif Pro" Merrirweather Georgia serif,
-  "monospace": "Source Code Pro" "Fira Code" "Fira Mono" "Roboto Mono" "Lucida Console" Monaco monospace
+    "sans-serif": unquote("Graphik, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"),
+    "serif": unquote("\"Playfair Display\", \"Source Serif Pro\", Merrirweather, Georgia, serif"),
+    "monospace": unquote("\"Source Code Pro\", \"Fira Code\", \"Fira Mono\", \"Roboto Mono\", \"Lucida Console\", Monaco, monospace")
 );
 $box-shadow-values: (
   none,
