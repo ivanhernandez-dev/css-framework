@@ -1,0 +1,68 @@
+.c-pagination {
+  --c-pagination-border-radius-normal: var(--border-radius-0);
+  --c-pagination-border-radius-rounded: var(--border-radius-5);
+  --c-pagination-border-radius: var(--c-pagination-border-radius-normal);
+
+  --c-pagination-primary-color: var(--color-primary-5);
+  --c-pagination-alternative-color: var(--color-alternative-5);
+  --c-pagination-danger-color: var(--color-danger-5);
+
+  --c-pagination-dark-color: var(--color-black-9);
+  --c-pagination-light-color: var(--color-white-1);
+  --c-pagination-main-color: var(--c-pagination-primary-color);
+
+  --c-pagination-border-color: var(--c-pagination-main-color);
+
+  display: inline-block;
+  list-style: none;
+  border: 1px solid var(--c-pagination-border-color);
+  border-radius: var(--c-pagination-border-radius);
+
+  &__item {
+    --c-pagination__item-color: var(--c-pagination-dark-color);
+    --c-pagination__item-background-color: var(--c-pagination-light-color);
+    --c-pagination__item-border-color: var(--c-pagination-dark-color);
+
+    color: var(--c-pagination__item-color);
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: var(--c-pagination__item-background-color);
+
+    &--active {
+      --c-pagination__item-color: var(--c-pagination-light-color);
+      --c-pagination__item-background-color: var(--c-pagination-main-color);
+      --c-pagination__item-border-color: var(--c-pagination-main-color);
+    }
+
+    &:last-child {
+      border-top-right-radius: var(--c-pagination-border-radius);
+      border-bottom-right-radius: var(--c-pagination-border-radius);
+    }
+
+    &:first-child {
+      border-top-left-radius: var(--c-pagination-border-radius);
+      border-bottom-left-radius: var(--c-pagination-border-radius);
+    }
+  }
+
+  &--square {
+    --c-pagination-border-radius: var(--c-pagination-border-radius-normal);
+  }
+
+  &--rounded {
+    --c-pagination-border-radius: var(--c-pagination-border-radius-rounded);
+  }
+
+  &--primary {
+    --c-pagination-main-color: var(--c-pagination-primary-color);
+  }
+
+  &--alternative {
+    --c-pagination-main-color: var(--c-pagination-alternative-color);
+  }
+
+  &--danger {
+    --c-pagination-main-color: var(--c-pagination-danger-color);
+  }
+}

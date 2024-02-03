@@ -8,11 +8,15 @@
 "02_base/_reset";
 
 @import
+"03_layout/_l-columns";
+
+@import
 "04_components/_c-button",
 "04_components/_c-alert",
 "04_components/_c-badge",
 "04_components/_c-title",
-"04_components/_c-card";
+"04_components/_c-card",
+"04_components/_c-pagination";
 
 @import
 "06_global/_g--padding",
