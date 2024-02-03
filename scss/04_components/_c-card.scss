@@ -16,6 +16,8 @@
   --c-card-border-radius: var(--border-radius-2);
   --c-card-title-font-size: var(--font-size-9);
 
+  --c-card-font-family: var(--font-family-default);
+
   background-color: var(--c-card-background-color);
   border: 1px solid var(--c-card-border-color);
   border-radius: var(--c-card-border-radius);
@@ -82,12 +84,14 @@
 
     font-size: var(--c-card__title-font-size);
     margin-bottom: var(--c-card__title-margin-bottom);
+    font-family: var(--c-card-font-family);
   }
 
   &__text {
     --c-card__text-margin-bottom: var(--margin-5);
 
     margin-bottom: var(--c-card__text-margin-bottom);
+    font-family: var(--c-card-font-family);
   }
 
   &__button {
@@ -107,5 +111,6 @@
     color: var(--c-card__button-color);
     background-color: var(--c-card__button-background-color);
     border-radius: var(--c-card__button-border-radius);
+    font-family: var(--c-card-font-family);
   }
 }

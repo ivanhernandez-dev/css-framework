@@ -422,7 +422,7 @@ html {
   --c-button-padding-vertical-s: var(--padding-3);
   --c-button-padding-horizontal: var(--c-button-padding-horizontal-m);
   --c-button-padding-vertical: var(--c-button-padding-vertical-m);
-  --c-button-font-family: var(--font-family-sans-serif);
+  --c-button-font-family: var(--font-family-default);
   --c-button-font-size-m: var(--font-size-7);
   --c-button-font-size-l: var(--font-size-8);
   --c-button-font-size-s: var(--font-size-6);
@@ -493,7 +493,7 @@ html {
   --c-alert-padding-l: var(--padding-7);
   --c-alert-padding-s: var(--padding-5);
   --c-alert-padding: var(--c-alert-padding-m);
-  --c-alert-font-family: var(--font-family-sans-serif);
+  --c-alert-font-family: var(--font-family-default);
   --c-alert-font-size-m: var(--font-size-7);
   --c-alert-font-size-l: var(--font-size-8);
   --c-alert-font-size-s: var(--font-size-6);
@@ -586,7 +586,7 @@ html {
   --c-title-text-decoration-underline: var(--text-decoration-underline);
   --c-title-text-decoration: var(--c-title-text-decoration-none);
   --c-title-color: var(--color-blue-8);
-  --c-title-font-family: var(--font-family-sans-serif);
+  --c-title-font-family: var(--font-family-default);
   font-size: var(--c-title-font-size);
   font-weight: var(--c-title-font-weight);
   text-decoration: var(--c-title-text-decoration);
@@ -629,6 +629,7 @@ html {
   --c-card-border-color: var(--c-card-color-strong);
   --c-card-border-radius: var(--border-radius-2);
   --c-card-title-font-size: var(--font-size-9);
+  --c-card-font-family: var(--font-family-default);
   background-color: var(--c-card-background-color);
   border: 1px solid var(--c-card-border-color);
   border-radius: var(--c-card-border-radius);
@@ -682,10 +683,12 @@ html {
   --c-card__title-font-size: var(--font-size-9);
   font-size: var(--c-card__title-font-size);
   margin-bottom: var(--c-card__title-margin-bottom);
+  font-family: var(--c-card-font-family);
 }
 .c-card__text {
   --c-card__text-margin-bottom: var(--margin-5);
   margin-bottom: var(--c-card__text-margin-bottom);
+  font-family: var(--c-card-font-family);
 }
 .c-card__button {
   --c-card__button-background-color: var(--c-card-color-strong);
@@ -703,6 +706,7 @@ html {
   color: var(--c-card__button-color);
   background-color: var(--c-card__button-background-color);
   border-radius: var(--c-card__button-border-radius);
+  font-family: var(--c-card-font-family);
 }
 
 .c-pagination {
@@ -725,11 +729,13 @@ html {
   --c-pagination__item-color: var(--c-pagination-dark-color);
   --c-pagination__item-background-color: var(--c-pagination-light-color);
   --c-pagination__item-border-color: var(--c-pagination-dark-color);
+  --c-pagination__item-font-family: var(--font-family-default);
   color: var(--c-pagination__item-color);
   float: left;
   padding: 8px 16px;
   text-decoration: none;
   background-color: var(--c-pagination__item-background-color);
+  font-family: var(--c-pagination__item-font-family);
 }
 .c-pagination__item--active {
   --c-pagination__item-color: var(--c-pagination-light-color);
@@ -4867,9 +4873,14 @@ html {
   }
 }
 :root {
+  --font-family-default: Graphik, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --font-family-sans-serif: Graphik, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --font-family-serif: "Playfair Display", "Source Serif Pro", Merrirweather, Georgia, serif;
   --font-family-monospace: "Source Code Pro", "Fira Code", "Fira Mono", "Roboto Mono", "Lucida Console", Monaco, monospace;
+}
+
+.g--font-family-default {
+  font-family: var(--font-family-default);
 }
 
 .g--font-family-sans-serif {
@@ -4885,6 +4896,9 @@ html {
 }
 
 @media (min-width: 640px) {
+  .sm\:g--font-family-default {
+    font-family: var(--font-family-default);
+  }
   .sm\:g--font-family-sans-serif {
     font-family: var(--font-family-sans-serif);
   }
@@ -4896,6 +4910,9 @@ html {
   }
 }
 @media (min-width: 768px) {
+  .md\:g--font-family-default {
+    font-family: var(--font-family-default);
+  }
   .md\:g--font-family-sans-serif {
     font-family: var(--font-family-sans-serif);
   }
@@ -4907,6 +4924,9 @@ html {
   }
 }
 @media (min-width: 1024px) {
+  .lg\:g--font-family-default {
+    font-family: var(--font-family-default);
+  }
   .lg\:g--font-family-sans-serif {
     font-family: var(--font-family-sans-serif);
   }
@@ -4918,6 +4938,9 @@ html {
   }
 }
 @media (min-width: 1280px) {
+  .xl\:g--font-family-default {
+    font-family: var(--font-family-default);
+  }
   .xl\:g--font-family-sans-serif {
     font-family: var(--font-family-sans-serif);
   }

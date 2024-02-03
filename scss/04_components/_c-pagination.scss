@@ -22,12 +22,14 @@
     --c-pagination__item-color: var(--c-pagination-dark-color);
     --c-pagination__item-background-color: var(--c-pagination-light-color);
     --c-pagination__item-border-color: var(--c-pagination-dark-color);
+    --c-pagination__item-font-family: var(--font-family-default);
 
     color: var(--c-pagination__item-color);
     float: left;
     padding: 8px 16px;
     text-decoration: none;
     background-color: var(--c-pagination__item-background-color);
+    font-family: var(--c-pagination__item-font-family);
 
     &--active {
       --c-pagination__item-color: var(--c-pagination-light-color);
