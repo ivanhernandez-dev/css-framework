@@ -1,4 +1,5 @@
-.c-title {
+$class-name: c-title;
+.#{$class-name} {
   --c-title-font-size-1: var(--font-size-14);
   --c-title-font-size-2: var(--font-size-13);
   --c-title-font-size-3: var(--font-size-12);
@@ -52,5 +53,48 @@
     --c-title-font-size: var(--c-title-font-size-6);
     --c-title-font-weight: var(--font-weight-normal);
     --c-title-text-decoration: var(--c-title-text-decoration-underline);
+  }
+}
+
+$media-filter-responsive: map-get($media-filters, "responsive");
+@each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+  $after: "";
+  $before: "";
+  @if map-get($media-filter-responsive, "position") == "after" {
+    $after: map-get($media-filter-responsive, "separator") + $key;
+  } @else {
+    $before: $key + map-get($media-filter-responsive, "separator");
+  }
+
+  @media (min-width: #{$value}) {
+    .#{$before}#{$class-name} {
+      &--1#{$after} {
+        --c-title-font-size: var(--c-title-font-size-1);
+      }
+
+      &--2#{$after} {
+        --c-title-font-size: var(--c-title-font-size-2);
+      }
+
+      &--3#{$after} {
+        --c-title-font-size: var(--c-title-font-size-3);
+      }
+
+      &--4#{$after} {
+        --c-title-font-size: var(--c-title-font-size-4);
+      }
+
+      &--5#{$after} {
+        --c-title-font-size: var(--c-title-font-size-5);
+        --c-title-font-weight: var(--font-weight-normal);
+        --c-title-text-decoration: var(--c-title-text-decoration-underline);
+      }
+
+      &--6#{$after} {
+        --c-title-font-size: var(--c-title-font-size-6);
+        --c-title-font-weight: var(--font-weight-normal);
+        --c-title-text-decoration: var(--c-title-text-decoration-underline);
+      }
+    }
   }
 }

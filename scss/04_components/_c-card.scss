@@ -1,4 +1,5 @@
-.c-card {
+$class-name: c-card;
+.#{$class-name} {
   --c-card-color-weak-primary: var(--color-primary-1);
   --c-card-color-strong-primary: var(--color-primary-5);
   --c-card-color-weak-alternative: var(--color-alternative-1);
@@ -112,5 +113,49 @@
     background-color: var(--c-card__button-background-color);
     border-radius: var(--c-card__button-border-radius);
     font-family: var(--c-card-font-family);
+  }
+}
+
+$media-filter-responsive: map-get($media-filters, "responsive");
+@each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+  $after: "";
+  $before: "";
+  @if map-get($media-filter-responsive, "position") == "after" {
+    $after: map-get($media-filter-responsive, "separator") + $key;
+  } @else {
+    $before: $key + map-get($media-filter-responsive, "separator");
+  }
+
+  @media (min-width: #{$value}) {
+    .#{$before}#{$class-name} {
+      &--primary#{$after} {
+        --c-card-color-weak: var(--c-card-color-weak-primary);
+        --c-card-color-strong: var(--c-card-color-strong-primary);
+      }
+
+      &--alternative#{$after} {
+        --c-card-color-weak: var(--c-card-color-weak-alternative);
+        --c-card-color-strong: var(--c-card-color-strong-alternative);
+      }
+
+      &--danger#{$after} {
+        --c-card-color-weak: var(--c-card-color-weak-danger);
+        --c-card-color-strong: var(--c-card-color-strong-danger);
+      }
+
+      &__body {
+        &--left#{$after} {
+          --c-card__text-align: var(--c-card__text-align-normal);
+        }
+
+        &--center#{$after} {
+          --c-card__text-align: var(--c-card__text-align-center);
+        }
+
+        &--right#{$after} {
+          --c-card__text-align: var(--c-card__text-align-right);
+        }
+      }
+    }
   }
 }

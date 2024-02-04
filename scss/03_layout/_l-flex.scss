@@ -1,110 +1,94 @@
-.l-flex {
+$class-name: l-flex;
+.#{$class-name} {
   display: flex;
 
-  &--flex-wrap-wrap {
-    flex-wrap: wrap;
+  @each $value in (wrap, nowrap, wrap-reverse) {
+    &--flex-wrap-#{$value} {
+      flex-wrap: $value;
+    }
   }
 
-  &--flex-wrap-nowrap {
-    flex-wrap: nowrap;
+  @each $value in (row, row-reverse, column, column-reverse) {
+    &--flex-direction-#{$value} {
+      flex-direction: $value;
+    }
   }
 
-  &--flex-wrap-wrap-reverse {
-    flex-wrap: wrap-reverse;
+  @each $value in (flex-start, flex-end, center, space-between, space-around, space-evenly) {
+    &--justify-content-#{$value} {
+      justify-content: $value;
+    }
   }
 
-  &--flex-direction-row {
-    flex-direction: row;
+  @each $value in (stretch, flex-start, flex-end, center, baseline) {
+    &--align-items-#{$value} {
+      align-items: $value;
+    }
   }
 
-  &--flex-direction-row-reverse {
-    flex-direction: row-reverse;
-  }
-
-  &--flex-direction-column {
-    flex-direction: column;
-  }
-
-  &--flex-direction-column-reverse {
-    flex-direction: column-reverse;
-  }
-
-  &--justify-content-flex-start {
-    justify-content: flex-start;
-  }
-
-  &--justify-content-flex-end {
-    justify-content: flex-end;
-  }
-
-  &--justify-content-center {
-    justify-content: center;
-  }
-
-  &--justify-content-space-between {
-    justify-content: space-between;
-  }
-
-  &--justify-content-space-around {
-    justify-content: space-around;
-  }
-
-  &--justify-content-space-evenly {
-    justify-content: space-evenly;
-  }
-
-  &--align-items-stretch {
-    align-items: stretch;
-  }
-
-  &--align-items-flex-start {
-    align-items: flex-start;
-  }
-
-  &--align-items-flex-end {
-    align-items: flex-end;
-  }
-
-  &--align-items-center {
-    align-items: center;
-  }
-
-  &--align-items-baseline {
-    align-items: baseline;
-  }
-
-  &--align-content-stretch {
-    align-content: stretch;
-  }
-
-  &--align-content-flex-start {
-    align-content: flex-start;
-  }
-
-  &--align-content-flex-end {
-    align-content: flex-end;
-  }
-
-  &--align-content-center {
-    align-content: center;
-  }
-
-  &--align-content-space-between {
-    align-content: space-between;
-  }
-
-  &--align-content-space-around {
-    align-content: space-around;
-  }
-
-  &--align-content-space-evenly {
-    align-content: space-evenly;
+  @each $value in (stretch, flex-start, flex-end, center, space-between, space-around, space-evenly) {
+    &--align-content-#{$value} {
+      align-content: $value;
+    }
   }
 
   &__item {
     @for $i from 0 through 12 {
       &--#{$i} {
         flex-grow: #{$i};
+      }
+    }
+  }
+}
+
+$media-filter-responsive: map-get($media-filters, "responsive");
+@each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+  $after: "";
+  $before: "";
+  @if map-get($media-filter-responsive, "position") == "after" {
+    $after: map-get($media-filter-responsive, "separator") + $key;
+  } @else {
+    $before: $key + map-get($media-filter-responsive, "separator");
+  }
+
+  @media (min-width: #{$value}) {
+    .#{$before}#{$class-name} {
+      @each $value in (wrap, nowrap, wrap-reverse) {
+        &--flex-wrap-#{$value}#{$after} {
+          flex-wrap: $value;
+        }
+      }
+
+      @each $value in (row, row-reverse, column, column-reverse) {
+        &--flex-direction-#{$value}#{$after} {
+          flex-direction: $value;
+        }
+      }
+
+      @each $value in (flex-start, flex-end, center, space-between, space-around, space-evenly) {
+        &--justify-content-#{$value}#{$after} {
+          justify-content: $value;
+        }
+      }
+
+      @each $value in (stretch, flex-start, flex-end, center, baseline) {
+        &--align-items-#{$value}#{$after} {
+          align-items: $value;
+        }
+      }
+
+      @each $value in (stretch, flex-start, flex-end, center, space-between, space-around, space-evenly) {
+        &--align-content-#{$value}#{$after} {
+          align-content: $value;
+        }
+      }
+
+      &__item {
+        @for $i from 0 through 12 {
+          &--#{$i}#{$after} {
+            flex-grow: #{$i};
+          }
+        }
       }
     }
   }

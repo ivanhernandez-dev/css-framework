@@ -1,7 +1,7 @@
 $media-filters: (
   "dark": (
     "word": "dark",
-    "position": "before",
+    "position": "after",
     "separator": "\\:"),
   "responsive": (
     "breakpoints": (
@@ -10,7 +10,7 @@ $media-filters: (
       "lg": 1024px,
       "xl": 1280px
     ),
-    "position": "before",
+    "position": "after",
     "separator": "\\:"
   )
 );
@@ -20,6 +20,7 @@ $global-prefix: "g--";
 $opacity-values: (0: 0, 25: .25,50: .5,75: .75,100: 1);
 $padding-values: (0, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 128px, 160px, 192px, 224px, 256px, 320px, 480px, 640px);
 $margin-values: (0, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 128px, 160px, 192px, 224px, 256px, 320px, 480px, 640px);
+$gap-values: (0, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 128px, 160px, 192px, 224px, 256px, 320px, 480px, 640px);
 $font-size-values: (8px, 9px, 10px, 11px, 12px, 14px, 16px, 18px, 20px, 24px, 30px, 36px, 48px, 64px);
 $font-families: (
     "default": unquote("Graphik, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif"),
@@ -51,3 +52,5 @@ $colors: (
 );
 $font-decoration-values: (normal, bold, bolder, lighter);
 $text-decoration-values: (none, underline, overline, line-through, blink);
+
+$l-position-values: (0, 4px, 6px, 8px, 10px, 12px, 16px, 20px, 24px, 32px, 40px, 48px, 64px, 80px, 96px, 128px, 160px, 192px, 224px, 256px, 320px, 480px, 640px);

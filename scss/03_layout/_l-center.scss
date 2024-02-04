@@ -1,4 +1,5 @@
-.l-center {
+$class-name: l-center;
+.#{$class-name} {
     display: flex;
 
     &:has(&__area--vertical) {
@@ -14,6 +15,33 @@
         &--vertical {
             margin-top: auto;
             margin-bottom: auto;
+        }
+    }
+}
+
+$media-filter-responsive: map-get($media-filters, "responsive");
+@each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+    $after: "";
+    $before: "";
+    @if map-get($media-filter-responsive, "position") == "after" {
+        $after: map-get($media-filter-responsive, "separator") + $key;
+    } @else {
+        $before: $key + map-get($media-filter-responsive, "separator");
+    }
+
+    @media (min-width: #{$value}) {
+        .#{$before}#{$class-name} {
+            &__area {
+                &--horizontal#{$after} {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                &--vertical#{$after} {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                }
+            }
         }
     }
 }

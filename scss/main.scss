@@ -8,7 +8,11 @@
 "02_base/_reset";
 
 @import
-"03_layout/_l-columns";
+"03_layout/_l-columns",
+"03_layout/_l-rows",
+"03_layout/_l-center",
+"03_layout/_l-position",
+"03_layout/_l-flex";
 
 @import
 "04_components/_c-button",
@@ -28,4 +32,5 @@
 "06_global/_g--border-radius",
 "06_global/_g--color",
 "06_global/g--font-weight",
-"06_global/_g--text-decoration";
+"06_global/_g--text-decoration",
+"06_global/_g--gap";

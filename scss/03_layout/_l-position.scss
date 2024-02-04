@@ -1,17 +1,51 @@
-.l-position {
-    @each $position in map-get($l-position, "positions") {
+$class-name: l-position;
+$directions: (top, right, bottom, left);
+$positions: (relative, absolute, fixed, sticky);
+
+.#{$class-name} {
+    @each $position in $positions {
         &--#{$position} {
             position: $position;
         }
     }
 
-    @each $direction in map-get($l-position, "directions") {
-        $spaces: map-get($l-position, "spaces");
-        @for $i from 0 to length($spaces) {
-            $space: nth($spaces, $i + 1);
+    @each $direction in $directions {
+        @for $i from 0 to length($l-position-values) {
+            $space: nth($l-position-values, $i + 1);
 
             &__#{$direction}-#{$i} {
                 #{$direction}: $space;
+            }
+        }
+    }
+}
+
+$media-filter-responsive: map-get($media-filters, "responsive");
+@each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+    $after: "";
+    $before: "";
+    @if map-get($media-filter-responsive, "position") == "after" {
+        $after: map-get($media-filter-responsive, "separator") + $key;
+    } @else {
+        $before: $key + map-get($media-filter-responsive, "separator");
+    }
+
+    @media (min-width: #{$value}) {
+        .#{$before}#{$class-name} {
+            @each $position in $positions {
+                &--#{$position}#{$after} {
+                    position: $position;
+                }
+            }
+
+            @each $direction in $directions {
+                @for $i from 0 to length($l-position-values) {
+                    $space: nth($l-position-values, $i + 1);
+
+                    &__#{$direction}-#{$i}#{$after} {
+                        #{$direction}: $space;
+                    }
+                }
             }
         }
     }

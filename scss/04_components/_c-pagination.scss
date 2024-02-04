@@ -1,4 +1,5 @@
-.c-pagination {
+$class-name: c-pagination;
+.#{$class-name} {
   --c-pagination-border-radius-normal: var(--border-radius-0);
   --c-pagination-border-radius-rounded: var(--border-radius-5);
   --c-pagination-border-radius: var(--c-pagination-border-radius-normal);
@@ -66,5 +67,48 @@
 
   &--danger {
     --c-pagination-main-color: var(--c-pagination-danger-color);
+  }
+}
+
+$media-filter-responsive: map-get($media-filters, "responsive");
+@each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+  $after: "";
+  $before: "";
+  @if map-get($media-filter-responsive, "position") == "after" {
+    $after: map-get($media-filter-responsive, "separator") + $key;
+  } @else {
+    $before: $key + map-get($media-filter-responsive, "separator");
+  }
+
+  @media (min-width: #{$value}) {
+    .#{$before}#{$class-name} {
+      &__item {
+        &--active#{$after} {
+          --c-pagination__item-color: var(--c-pagination-light-color);
+          --c-pagination__item-background-color: var(--c-pagination-main-color);
+          --c-pagination__item-border-color: var(--c-pagination-main-color);
+        }
+      }
+
+      &--square#{$after} {
+        --c-pagination-border-radius: var(--c-pagination-border-radius-normal);
+      }
+
+      &--rounded#{$after} {
+        --c-pagination-border-radius: var(--c-pagination-border-radius-rounded);
+      }
+
+      &--primary#{$after} {
+        --c-pagination-main-color: var(--c-pagination-primary-color);
+      }
+
+      &--alternative#{$after} {
+        --c-pagination-main-color: var(--c-pagination-alternative-color);
+      }
+
+      &--danger#{$after} {
+        --c-pagination-main-color: var(--c-pagination-danger-color);
+      }
+    }
   }
 }

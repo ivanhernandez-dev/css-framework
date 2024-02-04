@@ -1,4 +1,5 @@
-.c-badge {
+$class-name: c-badge;
+.#{$class-name} {
   --c-badge-background-color-primary: var(--color-primary-5);
   --c-badge-background-color-alternative: var(--color-alternative-6);
   --c-badge-background-color-danger: var(--color-danger-5);
@@ -45,5 +46,45 @@
   &--black {
     --c-badge-background-color: var(--c-badge-color-black);
     --c-badge-color: var(--c-badge-color-white);
+  }
+}
+
+$media-filter-responsive: map-get($media-filters, "responsive");
+@each $key, $value in map-get($media-filter-responsive, "breakpoints") {
+  $after: "";
+  $before: "";
+  @if map-get($media-filter-responsive, "position") == "after" {
+    $after: map-get($media-filter-responsive, "separator") + $key;
+  } @else {
+    $before: $key + map-get($media-filter-responsive, "separator");
+  }
+
+  @media (min-width: #{$value}) {
+    .#{$before}#{$class-name} {
+      &--primary#{$after} {
+        --c-badge-background-color: var(--c-badge-background-color-primary);
+        --c-badge-color: var(--c-badge-color-white);
+      }
+
+      &--alternative#{$after} {
+        --c-badge-background-color: var(--c-badge-background-color-alternative);
+        --c-badge-color: var(--c-badge-color-black);
+      }
+
+      &--danger#{$after} {
+        --c-badge-background-color: var(--c-badge-background-color-danger);
+        --c-badge-color: var(--c-badge-color-white);
+      }
+
+      &--white#{$after} {
+        --c-badge-background-color: var(--c-badge-background-color-white);
+        --c-badge-color: var(--c-badge-color-black);
+      }
+
+      &--black#{$after} {
+        --c-badge-background-color: var(--c-badge-color-black);
+        --c-badge-color: var(--c-badge-color-white);
+      }
+    }
   }
 }
