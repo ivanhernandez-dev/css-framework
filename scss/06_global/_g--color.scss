@@ -11,5 +11,5 @@ $property-names: (
 
 @each $property-name in $property-names {
   @include globals-map-from-1($property-name, $values, $main-property-name);
-  @include dark-globals-map-from-1($property-name, $values);
+  @include dark-globals-map-from-1($property-name, $values, $main-property-name);
 }

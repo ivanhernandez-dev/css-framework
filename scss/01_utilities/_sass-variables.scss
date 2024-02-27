@@ -10,7 +10,7 @@ $media-filters: (
       "lg": 1024px,
       "xl": 1280px
     ),
-    "position": "after",
+    "position": "before",
     "separator": "\\:"
   )
 );
@@ -30,25 +30,24 @@ $font-families: (
 );
 $box-shadow-values: (
   none,
-  0 1px 3px hsla(0, 0%, 0%, .2),
-  0 4px 6px hsla(0, 0%, 0%, .2),
-  0 5px 15px hsla(0, 0%, 0%, .2),
-  0 10px 24px hsla(0, 0%, 0%, .2),
-  0 15px 35px hsla(0, 0%, 0%, .2)
+  0 1px 3px hsla(0, 0%, 0%, .8),
+  0 4px 6px hsla(0, 0%, 0%, .8),
+  0 5px 15px hsla(0, 0%, 0%, .8),
+  0 10px 24px hsla(0, 0%, 0%, .8),
+  0 15px 35px hsla(0, 0%, 0%, .8)
 );
 $border-radius-values: (0, 2px, 4px, 6px, 8px, 16px);
 $colors: (
     "primary": (#E6F3FE, #B8D9F5, #90C3E4, #67AAD0, #4097BF, #2F7A98, #1C5F73, #0A3B47, #011519),
     "alternative": (#FBFEE6, #F5FDAF, #F5FC79, #F7FA3D, #F9F106, #C2B505, #8B7B04, #504402, #191401),
     "danger": (#FEECE6, #F5C4B8, #E49D90, #D07367, #BF4840, #98322F, #73231C, #47110A, #190501),
-    "gray": (#d9d9d9, #c2c2c2, #ababab, #949494, #7d7d7d, #666666, #4f4f4f, #383838),
+    "gray": (#d9d9d9, #c2c2c2, #ababab, #949494, #7d7d7d, #666666, #4f4f4f, #383838, #212121),
     "white": (#FFFFFF, #FCFCFC, #FAFAFA, #F7F7F7, #F5F5F5, #F2F2F2, #F0F0F0, #EDEDED, #EBEBEB),
     "red": (#FEECE6, #F5C4B8, #E49D90, #D07367, #BF4840, #98322F, #73231C, #47110A, #190501),
     "green": (#E6FEEB, #B8F5C1, #90E499, #67D06E, #40BF42, #30982F, #22731C, #10470A, #041901),
     "blue": (#E6F3FE, #B8D9F5, #90C3E4, #67AAD0, #4097BF, #2F7A98, #1C5F73, #0A3B47, #011519),
     "yellow": (#FEFEE6, #FAF9B2, #F3EB82, #EADA4D, #E3C51C, #B29515, #82670D, #4D3A05, #191101),
-    // TODO: Change clack colors
-    "black": (#505050, #404040, #303030, #202020, #101010, #000000, #000000, #000000, #000000)
+    "black": (#cccccc , #b3b3b3 , #999999 , #808080 , #666666 , #4d4d4d , #333333 , #1a1a1a , #000000)
 );
 $font-decoration-values: (normal, bold, bolder, lighter);
 $text-decoration-values: (none, underline, overline, line-through, blink);

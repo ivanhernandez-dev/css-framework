@@ -16,9 +16,9 @@ $values: $box-shadow-values;
   $variable-name: $property-name + "-" + #{if($i == 0, none, $i)};
 
   .#{$class-name} {
-    -webkit-box-shadow: --#{$variable-name};
-    -moz-box-shadow: --#{$variable-name};
-    box-shadow: --#{$variable-name};
+    -webkit-box-shadow: var(--#{$variable-name});
+    -moz-box-shadow: var(--#{$variable-name});
+    box-shadow: var(--#{$variable-name});
   }
 }
 
@@ -30,9 +30,9 @@ $media-filter-dark: map-get($media-filters, "dark");
     $variable-name: $property-name + "-" + #{if($i == 0, none, $i)};
 
     .#{$class-name} {
-      -webkit-box-shadow: --#{$variable-name};
-      -moz-box-shadow: --#{$variable-name};
-      box-shadow: --#{$variable-name};
+      -webkit-box-shadow: var(--#{$variable-name});
+      -moz-box-shadow: var(--#{$variable-name});
+      box-shadow: var(--#{$variable-name});
     }
   }
 }

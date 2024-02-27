@@ -34,7 +34,7 @@ $class-name: l-flex;
 
   &__item {
     @for $i from 0 through 12 {
-      &--#{$i} {
+      &--flex-grow-#{$i} {
         flex-grow: #{$i};
       }
     }
@@ -85,7 +85,7 @@ $media-filter-responsive: map-get($media-filters, "responsive");
 
       &__item {
         @for $i from 0 through 12 {
-          &--#{$i}#{$after} {
+          &--flex-grow-#{$i}#{$after} {
             flex-grow: #{$i};
           }
         }

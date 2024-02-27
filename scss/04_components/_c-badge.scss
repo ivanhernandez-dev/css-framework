@@ -12,13 +12,13 @@ $class-name: c-badge;
 
   --c-badge-color: var(--c-badge-color-white);
 
-  --c-button-padding: var(--padding-1);
+  --c-badge-padding: var(--padding-1);
 
   --c-badge-border-radius: var(--border-radius-5);
 
   color: var(--c-badge-color);
   background-color: var(--c-badge-background-color);
-  padding: var(--c-button-padding);
+  padding: var(--c-badge-padding);
   font-size: inherit;
   font-family: inherit;
   border-radius: var(--c-badge-border-radius);

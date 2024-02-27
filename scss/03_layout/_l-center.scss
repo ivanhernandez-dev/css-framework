@@ -2,7 +2,7 @@ $class-name: l-center;
 .#{$class-name} {
     display: flex;
 
-    &:has(&__area--vertical) {
+    &:has(&__area--vertical), &:has(&__area--both) {
         height: 100vh;
     }
 
@@ -15,6 +15,9 @@ $class-name: l-center;
         &--vertical {
             margin-top: auto;
             margin-bottom: auto;
+        }
+        &--both {
+            margin: auto;
         }
     }
 }
@@ -40,6 +43,9 @@ $media-filter-responsive: map-get($media-filters, "responsive");
                 &--vertical#{$after} {
                     margin-top: auto;
                     margin-bottom: auto;
+                }
+                &--both#{$after} {
+                    margin: auto;
                 }
             }
         }

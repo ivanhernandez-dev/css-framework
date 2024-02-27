@@ -200,6 +200,20 @@
   }
 }
 
+@mixin dark-globals-map($property-name, $values) {
+  $media-filter-dark: map-get($media-filters, "dark");
+  @media (prefers-color-scheme: dark) {
+    @each $key, $value in $values {
+      $class-name: add-filter-word(map-get($media-filter-dark, "word"), map-get($media-filter-dark, "position"), map-get($media-filter-dark, "separator"), $global-prefix + $property-name + '-' + $key);
+      $variable-name: $property-name + '-' + $key;
+
+      .#{$class-name} {
+        #{$property-name}: var(--#{$variable-name});
+      }
+    }
+  }
+}
+
 @mixin dark-globals-map-from-1($property-name, $values, $initial-variable-name: $property-name) {
   $media-filter-dark: map-get($media-filters, "dark");
   @each $key, $value in $values {
